@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "耳机大家坛扩展",
+  "description": "记录访问板块，提供快捷跳转",
+  "version": "1.0",
+  "background": {
+    "scripts": ["main.js"],
+    "persistent": false
+  },
+  "icons":{
+    "128":"erjix.jpg"
+  },
+  
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "http://www.erji.net/",
+    "http://*/*"
+  ],
+    "content_scripts": [{
+        "js": ["jquery-1.11.1.min.js","main.js"],
+        "matches": ["http://*/*","https://*/*","http://www.erji.net/*" ],
+        "run_at": "document_end",
+        "css":["main.css"]
+    }]
+
+}
